@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المعاني</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #4CAF50;
+            margin: 20px;
+        }
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        .btn {
+            background-color: #4CAF50;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>المعاني</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>الحرف العربي</th>
+                <th>الحرف الليفالي</th>
+            </tr>
+        </thead>
+        <tbody>
+            <script>
+                const dictionary = {
+                    'ا': 'E', 'ب': 'L', 'ج': 'Q', 'د': 'R', 'ه': 'X', 'و': 'W', 'ز': 'H',
+                    'ح': 'N', 'ط': 'J', 'ي': 'C', 'ك': 'Ş', 'ل': 'Ō', 'م': 'Z', 'ن': 'V',
+                    'س': 'T', 'ع': 'G', 'ف': 'Ç', 'ص': 'O', 'ق': 'M', 'ر': 'Ğ', 'ش': 'F',
+                    'ت': 'B', 'ث': 'P', 'خ': 'U', 'ذ': 'A', 'ض': 'K', 'ظ': 'I', 'غ': 'Ā',
+                    'ة': 'D', 'ى': 'Æ', 'ئ': 'Y', 'آ': 'Ẽ', 'َ': 'Š', 'ً': 'Ś', 'ِ': 'Ș',
+                    'ُ': 'Ċ', 'ٌ': 'Č', 'ْ': 'Ć', 'ّ': 'Ę', 'ؤ': 'ẞ', 'أ': 'Ê', 'إ': 'Ě',
+                    'ء': 'Ľ'
+                };
+
+                for (const [arabic, livalian] of Object.entries(dictionary)) {
+                    document.write(`<tr><td>${arabic}</td><td>${livalian}</td></tr>`);
+                }
+            </script>
+        </tbody>
+    </table>
+    <a href="alocombat.html" class="btn">العودة إلى الصفحة الرئيسية</a>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدعم والمساعدة</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            color: #333;
+        }
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        .contact {
+            font-size: 18px;
+            margin: 15px 0;
+        }
+        .contact a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        .contact a:hover {
+            text-decoration: underline;
+            color: #45a049;
+        }
+        .buttons {
+            margin: 20px 0;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>الدعم والمساعدة</h1>
+    <p class="contact">
+        للدعم أو المساعدة، يرجى الاتصال على الرقم:
+        <a href="tel:+97339238955">+973 3923 8955</a>
+    </p>
+    <p class="contact">
+        أو مراسلتنا عبر البريد الإلكتروني:
+        <a href="mailto:al.detovall@gmail.com">al.detovall@gmail.com</a>
+    </p>
+    
+    <div class="buttons">
+        <button onclick="openPage('index.html')">صفحة الأخبار</button>
+        <button onclick="openPage('alocombat.html')">صفحة الليفالية</button>
+    </div>
+
+    <script>
+        function openPage(url) {
+            window.open(url, '_blank'); // فتح الرابط في تبويب جديد
+        }
+    </script>
+</body>
+</html>
