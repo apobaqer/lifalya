@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التحويل من العربية إلى الليفالية</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #4CAF50;
+            margin: 20px;
+        }
+        textarea {
+            width: 90%;
+            height: 100px;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            resize: none;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .container {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>التحويل من العربية إلى الليفالية</h1>
+    <div class="container">
+        <textarea id="inputText" placeholder="أدخل النص هنا..." oninput="convertText()"></textarea>
+        <textarea id="outputText" placeholder="النص المحول يظهر هنا..." readonly></textarea>
+        <button onclick="copyText()">نسخ النص</button>
+        <br>
+        <a href="dictionary.html">
+            <button>عرض المعاني</button>
+        </a>
+    </div>
+
+    <script>
+        const arabicToLivalian = {
+            'ا': 'E', 'ب': 'L', 'ج': 'Q', 'د': 'R', 'ه': 'X', 'و': 'W', 'ز': 'H',
+            'ح': 'N', 'ط': 'J', 'ي': 'C', 'ك': 'Ş', 'ل': 'Ō', 'م': 'Z', 'ن': 'V',
+            'س': 'T', 'ع': 'G', 'ف': 'Ç', 'ص': 'O', 'ق': 'M', 'ر': 'Ğ', 'ش': 'F',
+            'ت': 'B', 'ث': 'P', 'خ': 'U', 'ذ': 'A', 'ض': 'K', 'ظ': 'I', 'غ': 'Ā',
+            'ة': 'D', 'ى': 'Æ', 'ئ': 'Y', 'آ': 'Ẽ', 'َ': 'Š', 'ً': 'Ś', 'ِ': 'Ș',
+            'ُ': 'Ċ', 'ٌ': 'Č', 'ْ': 'Ć', 'ّ': 'Ę', 'ؤ': 'ẞ', 'أ': 'Ê', 'إ': 'Ě',
+            'ء': 'Ľ'
+        };
+
+        const livalianToArabic = Object.fromEntries(
+            Object.entries(arabicToLivalian).map(([arabic, livalian]) => [livalian, arabic])
+        );
+
+        function convertText() {
+            const inputText = document.getElementById('inputText').value;
+            let outputText = '';
+            for (const char of inputText) {
+                const upperChar = char.toUpperCase();
+                if (arabicToLivalian[char]) {
+                    outputText += arabicToLivalian[char];
+                } else if (livalianToArabic[upperChar]) {
+                    outputText += livalianToArabic[upperChar];
+                } else {
+                    outputText += char;
+                }
+            }
+            document.getElementById('outputText').value = outputText;
+        }
+
+        function copyText() {
+            const outputText = document.getElementById('outputText');
+            outputText.select();
+            outputText.setSelectionRange(0, 99999);
+            document.execCommand('copy');
+            alert('تم نسخ النص بنجاح!');
+        }
+    </script>
+</body>
+</html>
